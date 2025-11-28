@@ -1,0 +1,23 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: aliceblue;
+  height: calc(100vh - 4rem);
+  justify-content: space-between;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+.copyright {
+  font-size: 1rem;
+}
