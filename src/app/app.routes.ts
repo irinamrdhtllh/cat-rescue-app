@@ -11,6 +11,6 @@ export const routes: Routes = [
   {
     path: 'adoption',
     component: Adoption,
-    title: 'Adoption Your Cat',
+    title: 'Adoption Center',
   },
 ];
