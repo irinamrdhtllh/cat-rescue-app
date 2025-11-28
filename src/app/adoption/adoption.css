@@ -1,0 +1,9 @@
+.adoption-page {
+  padding: 2rem 4rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
