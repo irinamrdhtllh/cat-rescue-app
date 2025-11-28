@@ -1,3 +1,9 @@
-<h1>Adoption Center</h1>
-<p>Choose your favorite ones!</p>
-<app-adoption-card [adoptionCard]="adoptionCard"></app-adoption-card>
+<section class="adoption-page">
+  <h1>Adoption Center</h1>
+  <p>Choose your favorite ones!</p>
+  <section class="results">
+    @for(adoptionCard of adoptionCardList; track $index) {
+    <app-adoption-card [adoptionCard]="adoptionCard"></app-adoption-card>
+    }
+  </section>
+</section>

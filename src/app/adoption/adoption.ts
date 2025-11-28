@@ -9,14 +9,39 @@ import { AdoptionCardInfo } from '../adoption-card-info';
   styleUrl: './adoption.css',
 })
 export class Adoption {
-  adoptionCard: AdoptionCardInfo = {
-    id: 0,
-    photo: '',
-    name: 'Oreo',
-    city: 'Bandung',
-    state: 'West Java',
-    gender: 'Female',
-    breed: 'Ragdoll',
-    traits: 'Calm and friendly',
-  };
+  adoptionCardList: AdoptionCardInfo[] = [
+    {
+      id: 0,
+      photo: '/assets/oreo.jpg',
+      name: 'Oreo',
+      city: 'Bandung',
+      state: 'West Java',
+      gender: 'Male',
+      age: '2 month',
+      breed: 'British short hair',
+      traits: 'Playful',
+    },
+    {
+      id: 1,
+      photo: '/assets/aurora.jpg',
+      name: 'Aurora',
+      city: 'Jakarta',
+      state: 'DKI Jakarta',
+      gender: 'Female',
+      age: '1 month',
+      breed: 'Ragdoll',
+      traits: 'Calm and friendly',
+    },
+    {
+      id: 2,
+      photo: '/assets/molly.jpg',
+      name: 'Molly',
+      city: 'Jakarta',
+      state: 'DKI Jakarta',
+      gender: 'Female',
+      age: '3 month',
+      breed: 'Persian',
+      traits: 'Always hungry',
+    },
+  ];
 }

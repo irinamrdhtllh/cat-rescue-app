@@ -1,7 +1,14 @@
-<h2>{{ adoptionCard().name }}</h2>
-<ul>
-  <li>Location: {{ adoptionCard().city }}, {{ adoptionCard().state }}</li>
-  <li>Gender: {{ adoptionCard().gender }}</li>
-  <li>Breed: {{ adoptionCard().breed }}</li>
-  <li>Traits: {{ adoptionCard().traits }}</li>
-</ul>
+<section class="cat-card">
+  <img class="cat-photo" [src]="adoptionCard().photo" alt="Photo of {{ adoptionCard().name }}" />
+  <div class="cat-profile">
+    <h2>{{ adoptionCard().name }}</h2>
+    <ul>
+      <li>Location: {{ adoptionCard().city }}, {{ adoptionCard().state }}</li>
+      <li>Gender: {{ adoptionCard().gender }}</li>
+      <li>Age: {{ adoptionCard().age }}</li>
+      <li>Breed: {{ adoptionCard().breed }}</li>
+      <li>Traits: {{ adoptionCard().traits }}</li>
+    </ul>
+    <a href="#">Adopt me!</a>
+  </div>
+</section>
