@@ -43,5 +43,16 @@ export class Adoption {
       breed: 'Persian',
       traits: 'Always hungry',
     },
+    {
+      id: 3,
+      photo: '/assets/galardo.jpg',
+      name: 'Galardo',
+      city: 'Bandung',
+      state: 'West Java',
+      gender: 'Male',
+      age: '3 month',
+      breed: 'Persian',
+      traits: 'Fast and furious',
+    },
   ];
 }
