@@ -11,11 +11,22 @@ import { AdoptionCardInfo } from '../adoption-card-info';
 export class Adoption {
   catsUrl = 'http://localhost:3000/cats';
 
+  isLoading = signal(false);
   adoptionCards = signal<AdoptionCardInfo[]>([]);
+  isError = signal(false);
 
   async getAdoptionCardInfo(): Promise<AdoptionCardInfo[]> {
-    const cats = await fetch(this.catsUrl);
-    return (await cats.json()) ?? [];
+    try {
+      this.isLoading.set(true);
+      const cats = await fetch(this.catsUrl);
+      const json = await cats.json();
+      return json ?? [];
+    } catch (error) {
+      this.isError.set(true);
+      return [];
+    } finally {
+      this.isLoading.set(false);
+    }
   }
 
   async ngOnInit() {

@@ -7,9 +7,13 @@
       <button type="button">Search</button>
     </form>
     <div class="results">
-      @for(adoptionCard of adoptionCards(); track $index) {
+      @if (isLoading()) {
+      <p>Fetching cats data...</p>
+      } @else if (isError()) {
+      <p>Couldn't get cats data.</p>
+      } @else { @for(adoptionCard of adoptionCards(); track $index) {
       <app-adoption-card [adoptionCard]="adoptionCard"></app-adoption-card>
-      }
+      } }
     </div>
   </div>
 </section>
