@@ -9,16 +9,22 @@ import { AdoptionCardInfo } from '../adoption-card-info';
   styleUrl: './adoption.css',
 })
 export class Adoption {
-  catsUrl = 'http://localhost:3000/cats';
+  catsUrl = 'http://localhost:8000/cats';
 
   isLoading = signal(false);
   adoptionCards = signal<AdoptionCardInfo[]>([]);
   isError = signal(false);
 
-  async getAdoptionCardInfo(): Promise<AdoptionCardInfo[]> {
+  async getAdoptionCardInfo(city?: string): Promise<AdoptionCardInfo[]> {
     try {
       this.isLoading.set(true);
-      const cats = await fetch(this.catsUrl);
+      let url;
+      if (city) {
+        url = this.catsUrl + '?city=' + city;
+      } else {
+        url = this.catsUrl;
+      }
+      const cats = await fetch(url);
       const json = await cats.json();
       return json ?? [];
     } catch (error) {
@@ -27,6 +33,13 @@ export class Adoption {
     } finally {
       this.isLoading.set(false);
     }
+  }
+
+  async filterSubmitted(event: Event) {
+    event.preventDefault();
+    let formData = new FormData(event.target as HTMLFormElement);
+    let city = Object.fromEntries(formData.entries())['city'];
+    this.adoptionCards.set(await this.getAdoptionCardInfo(city as string));
   }
 
   async ngOnInit() {

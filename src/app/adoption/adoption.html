@@ -2,9 +2,9 @@
   <h1>Adoption Center</h1>
   <div class="container">
     <p>Choose your favorite ones!</p>
-    <form>
-      <input type="text" placeholder="Filter by location" />
-      <button type="button">Search</button>
+    <form (submit)="filterSubmitted($event)">
+      <input name="city" type="text" placeholder="Filter by location" #filter />
+      <button type="submit">Search</button>
     </form>
     <div class="results">
       @if (isLoading()) {
