@@ -15,5 +15,12 @@
       <app-adoption-card [adoptionCard]="adoptionCard"></app-adoption-card>
       } }
     </div>
+    <div class="pagination">
+      <button (click)="prevPage()">&#10094;</button>
+      @for(page of pages; track page) {
+      <a href="#" class="pages" (click)="goToPage(page); $event.preventDefault()">{{ page }}</a>
+      }
+      <button (click)="nextPage()">&#10095;</button>
+    </div>
   </div>
 </section>

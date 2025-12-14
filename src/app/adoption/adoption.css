@@ -1,4 +1,6 @@
 .adoption-page {
+  margin-left: 16rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -23,7 +25,18 @@ input {
 }
 
 .results {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* display: flex;
+  flex-direction: row; */
+  /* justify-content: space-between; */
+  gap: 2rem;
+}
+
+.pagination {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  align-self: center;
+  gap: 1rem;
 }
